@@ -1,4 +1,4 @@
-# OJ
+# OJ网站   https://vijos.org/d/nnu_contest/p/category/《程序设计基础》课程赛事
 
 ## 1-1 数字循环左移
 # 字符串切片、拼接
@@ -216,8 +216,70 @@ print(' '.join(sorted(a, reverse=True)))
 ## A1-2 分支结构练习：三数的特征值
 # 由于python中字符串的比较默认是按照Unicode码进行的，因此对于纯数字的字符串比较，可以直接用字符串比较得出
 # 而不需要强制类型转化了
+'''
 nums = input().split()
 # nums = [int(it) for it in nums]
 print(sorted(nums)[1], max(nums))
+'''
 
-##
+## A2-1 循环结构入门：数列求和
+# 循环
+'''
+a, b = map(int, input().split())
+res = 0
+l, r = a, b
+while l <= r:
+    res += l
+    l += 1
+print(res)
+'''
+# 就要写递归~
+'''
+def sum(a, b, res):
+    if a > b: return res
+    return sum(a + 1, b, res + a)
+
+a, b = map(int, input().split())
+res = 0
+res = sum(a, b, res)
+print(res)
+'''
+
+## A2-2 循环结构入门：斐波拉契数列
+# 列表添加元素、遍历列表
+'''
+arr = []
+n = int(input())
+a, b = 1, 1
+c = a + b
+while len(arr) < n:
+    arr.append(a)
+    a = b
+    b = c
+    c = a + b
+for it in arr: print(it, end=' ')
+'''
+
+## A2-3 循环结构入门：斐波拉契数列的和
+# 列表求和函数
+'''
+arr = []
+n = int(input())
+a, b = 1, 1
+c = a + b
+while len(arr) < n:
+    arr.append(a)
+    a = b
+    b = c
+    c = a + b
+print(sum(arr))
+'''
+
+
+
+
+
+
+
+
+

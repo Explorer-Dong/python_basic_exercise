@@ -92,7 +92,6 @@ res = [str(leader)] + [str(it) for it in nums]
 print(' '.join(res))
 '''
 
-
 ## 3-1 整数中的数字
 # 列表初始化创建：打表
 '''
@@ -174,8 +173,6 @@ word = input()
 print(sentence.count(word))
 '''
 
-
-
 ## 4-3 爱情故事
 # replace() 函数实现替换指定字符串中的第一个匹配到的子串为指定子串，返回一个新的字符串而不会改变原来的字符串
 '''
@@ -201,8 +198,6 @@ d2 = date(y2, m2, d2)
 delta = d2 - d1
 print(delta.days)
 '''
-
-
 
 ## A1-1 分支结构练习：三数排序
 # 直接按照字符串进行比较排序即可，否则还需要先转化为整型，再转化为str进行去掉列表输出的操作
@@ -233,16 +228,16 @@ while l <= r:
     l += 1
 print(res)
 '''
-# 就要写递归~
+
+# 特以此题留念一下我自己编写的第一个递归程序
+# 在Python中，默认的最大递归深度是1000
 '''
-def sum(a, b, res):
-    if a > b: return res
-    return sum(a + 1, b, res + a)
+def sum(a, b):
+    if a == b: return b;
+    return a + sum(a + 1, b)
 
 a, b = map(int, input().split())
-res = 0
-res = sum(a, b, res)
-print(res)
+print(sum(a, b))
 '''
 
 ## A2-2 循环结构入门：斐波拉契数列
@@ -275,7 +270,55 @@ while len(arr) < n:
 print(sum(arr))
 '''
 
-##
+## A3-1 素数专题：因子的和
+# pycharm中如果检测到了使用的模块，即使没有显式的导入，也会自动检测并导入
+# 因此为了提高程序的稳定性，还是需要显示导入标准库
+# / 与 // 的区别在于前者是浮点运算，而后者是整除运算
+# sqrt可读性比较高而且可以进行复数运算，但是x**0.5不可以
+'''
+import math
+
+x = int(input())
+res = 0
+for i in range(1, (int(math.sqrt(x)) + 1)):
+    if x % i == 0:
+        if x // i == i:
+            res += i
+        else:
+            res += i + x // i
+print(res)
+'''
+
+## A3-2 素数专题：素数判断
+'''
+import math
+
+def is_prime(x):
+    if x <= 1: return False
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    return True
+
+x = int(input())
+if is_prime(x): print("Yes")
+else: print("No")
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

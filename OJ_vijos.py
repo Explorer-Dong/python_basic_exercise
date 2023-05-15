@@ -305,25 +305,90 @@ if is_prime(x): print("Yes")
 else: print("No")
 '''
 
+## A3-3 素数专题：素数个数
+'''
+import math
 
+def is_prime(x):
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    return True
 
+n = int(input())
+cnt = 0
+for i in range(2, n + 1):
+    if is_prime(i):
+        cnt += 1
+print(cnt)
+'''
 
+## A3-4 素数专题：验证哥德巴赫猜想
+# 注意输出格式: print('%d+%d=%d' % (i, n - i, n))
+'''
+import math
 
+def is_prime(x):
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    return True
 
+n = int(input())
+for i in range(2, n // 2 + 1):
+    if is_prime(i) and is_prime(n - i):
+        print('%d+%d=%d' % (i, n - i, n))
+'''
 
+## A5-1 超级素数判断
+'''
+import math
 
+def is_prime(x):
+    if x <= 1: return False
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    return True
 
+n = int(input())
+flag = True
+while n > 0:
+    if not is_prime(n):
+        flag = False
+        break
+    n //= 10
+print("Yes" if flag else "No")
+'''
 
+## A5-2 超级素数的个数
+# 主要讨论传入值是否可以被改变的问题
+# 首先python中传入的都是变量的引用
+# 其次就是对于传入的变量，数字，字符串，元组，不可变集合是无法修改的
+# 传入列表会自动识别为元组
+# 传入参数的形式有待研究
+'''
+import math
 
+def is_prime(x):
+    if x <= 1: return False
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    return True
 
+def is_super_prime(x):
+    while x:
+        if not is_prime(x):
+            return False
+        x //= 10
+    return True
 
-
-
-
-
-
-
-
-
-
+n = int(input())
+cnt = 0
+for i in range(2, n + 1):
+    if is_super_prime(i):
+        cnt += 1
+print(cnt)
+'''
 

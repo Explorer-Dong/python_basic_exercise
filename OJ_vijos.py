@@ -217,6 +217,16 @@ nums = input().split()
 print(sorted(nums)[1], max(nums))
 '''
 
+## A1-4 分支结构练习：今年过去了多少天
+# 通过datetime.date()进行构造
+'''
+import datetime
+year, month, day = map(int, input().split())
+now = datetime.date(year, month, day)
+start = datetime.date(year, 1, 1)
+print((now - start).days + 1)
+'''
+
 ## A2-1 循环结构入门：数列求和
 # 循环
 '''
@@ -391,4 +401,83 @@ for i in range(2, n + 1):
         cnt += 1
 print(cnt)
 '''
+
+## A6-3 最大公约数专题：多个分数的加法
+# 分数计算的底层方法
+# print函数输出的用法，直接用逗号分隔就直接依次输出，中间有空格，如果不想有空格直接写成变量A+变量B
+'''
+import math
+
+n = int(input())
+up = 0
+low = 1
+for i in range(n):
+    a, b = map(int, input().split())
+    up = up * b + low * a
+    low *= b
+div = math.gcd(up, low)
+up, low = up // div, low // div
+print(up, low)
+'''
+
+## A6-4 最大公约数专题：多个数的最大公约数
+#
+'''
+import math
+
+n = int(input())
+nums = input().split()
+nums = [int(it) for it in nums]
+num = nums[0]
+for i in range(1, n):
+    num = math.gcd(num, nums[i])
+print(num)
+'''
+
+## A7-5 数组的有序插入函数
+#
+'''
+n = int(input())
+nums = input().split()
+nums = [int(it) for it in nums]
+num = int(input())
+
+nums.append(num)
+print(*sorted(nums))
+'''
+
+## A7-6 数组的左移函数
+# 在输出单个字符的时候不会加单引号
+'''
+def fun():
+    n = int(input())
+    nums = input().split()
+    k = int(input())
+
+    for i in range(k):
+        tmp = nums[0]
+        nums.pop(0)
+        nums.append(tmp)
+
+    print(*nums)
+    
+
+if __name__ == '__main__':
+    fun()
+'''
+
+## A7-7 数组的右移函数
+from collections import deque
+
+def MoveRight():
+    n = int(input())
+    nums = deque([int(it) for it in input().split()])
+    k = int(input())
+
+    nums.rotate(k)
+
+    print(*nums)
+
+if __name__ == '__main__':
+    MoveRight()
 

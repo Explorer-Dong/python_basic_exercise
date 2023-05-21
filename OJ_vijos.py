@@ -467,6 +467,7 @@ if __name__ == '__main__':
 '''
 
 ## A7-7 数组的右移函数
+'''
 from collections import deque
 
 def MoveRight():
@@ -480,4 +481,33 @@ def MoveRight():
 
 if __name__ == '__main__':
     MoveRight()
+'''
+
+
+## A8-1 字符串的输出函数
+#
+'''
+def f(str):
+    hi = sum([c.isupper() for c in str])
+    lo = sum([c.islower() for c in str])
+    return hi - lo
+
+if __name__ == '__main__':
+    s = input(); t = input()
+    print(f(s), f(t))
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

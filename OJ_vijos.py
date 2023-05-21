@@ -483,7 +483,6 @@ if __name__ == '__main__':
     MoveRight()
 '''
 
-
 ## A8-1 字符串的输出函数
 #
 '''
@@ -496,18 +495,3 @@ if __name__ == '__main__':
     s = input(); t = input()
     print(f(s), f(t))
 '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

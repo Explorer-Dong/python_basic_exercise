@@ -495,3 +495,61 @@ if __name__ == '__main__':
     s = input(); t = input()
     print(f(s), f(t))
 '''
+
+## A8-2 字符串的统计函数
+# 压行压到位
+'''
+s = input()
+t = input()
+print(sum([c.islower() for c in s]), end=' ')
+print(sum([c.islower() for c in t]))
+'''
+
+## A8-3 字符串的统计函数
+# 同上
+'''
+def f(str):
+    hi = sum([c.isupper() for c in str])
+    lo = sum([c.islower() for c in str])
+    return hi - lo
+
+if __name__ == '__main__':
+    s = input(); t = input()
+    print(f(s), f(t))
+'''
+
+## A8-4 字符串的连接函数
+# 注意负数索引在python中的灵活应用
+'''
+def Concat(s1: str, s2: str) -> str:
+    return s1 + s2
+
+if __name__ == '__main__':
+    s = input(); t = input()
+    ans = Concat(s[:-1], t[1:])
+    print(ans)
+'''
+
+## A8-5 删除字符串中多余的一种字符
+# 列表推导式、解包、print函数的分隔符参数sep
+'''
+s = input()
+ch = input()
+print(*[c if c != ch else '' for c in s], sep='')
+'''
+
+## A8-6 删除字符串中多余的多种字符
+# 同上
+'''
+s = input()
+t = input()
+print(*[c if c not in t else '' for c in s], sep='')
+'''
+
+## A8-7 删除字符串中一个子串
+# python中的索引已经做好防越界保护了
+'''
+s = input()
+bi, le = map(int, input().split())
+print(s[:bi] + s[(bi + le):])
+'''

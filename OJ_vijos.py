@@ -596,5 +596,3 @@ if __name__ == '__main__':
     b = tuple(map(int, input().split()))
     print(f(a), f(b))
 '''
-
-

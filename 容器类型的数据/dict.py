@@ -14,4 +14,3 @@ word_list = list(word_cnt)
 word_list.sort()
 for it in word_list:
     print(it, word_cnt[it])
-
